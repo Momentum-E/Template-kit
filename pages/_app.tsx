@@ -6,6 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import colors from 'tailwindcss/colors';
 import type { AppPropsWithLayout } from 'types';
 import mixpanel from 'mixpanel-browser';
+import axios from 'axios';
 
 import '@boxyhq/react-ui/dist/style.css';
 import '../styles/globals.css';
@@ -18,19 +19,30 @@ import { AccountLayout } from '@/components/layouts';
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const { session, ...props } = pageProps;
 
-  // Add mixpanel
   useEffect(() => {
-    if (env.mixpanel.token) {
-      mixpanel.init(env.mixpanel.token, {
-        debug: true,
-        ignore_dnt: true,
-        track_pageview: true,
-      });
-    }
+    const initialize = async () => {
+      if (env.mixpanel.token) {
+        mixpanel.init(env.mixpanel.token, {
+          debug: true,
+          ignore_dnt: true,
+          track_pageview: true,
+        });
+      }
 
-    if (env.darkModeEnabled) {
-      applyTheme(localStorage.getItem('theme') as Theme);
-    }
+      if (env.darkModeEnabled) {
+        applyTheme(localStorage.getItem('theme') as Theme);
+      }
+
+      try {
+        // Make a POST request to set up the webhook
+        const response = await axios.post('/api/enode/webhooks/createWebhook');
+        console.log('Webhook setup successful:', response.data);
+      } catch (error) {
+        console.error('Error setting up webhook:', error);
+      }
+    };
+
+    initialize();
   }, []);
 
   const getLayout =

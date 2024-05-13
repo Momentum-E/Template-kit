@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TeamDropdown from '../TeamDropdown';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import Brand from './Brand';
 import Navigation from './Navigation';
+import AddVehicle from './AddVehicle';
 import { useTranslation } from 'next-i18next';
+import VehicleList from './VehicleList';
+import AddCharger from './AddCharger';
 
 interface DrawerProps {
   sidebarOpen: boolean;
@@ -37,6 +40,9 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
                 <Brand />
                 <TeamDropdown />
                 <Navigation />
+                <AddCharger />
+                <VehicleList />
+                <AddVehicle />
               </div>
             </div>
           </div>
@@ -48,6 +54,9 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
           <Brand />
           <TeamDropdown />
           <Navigation />
+          <AddCharger />
+          <VehicleList />
+          <AddVehicle />
         </div>
       </div>
     </>
