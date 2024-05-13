@@ -1,0 +1,174 @@
+{
+    "data": [
+        {
+            "location": "Dehradun",
+            "date_of_connection": "April 23, 2024",
+            "data_points_collected": 1436,
+            "vehicle_information": {
+                "odometer": 123456,
+                "vehicle_model": "Ather 120x",
+                "model_year": 2021,
+                "VIN": "123456789",
+                "battery_capacity": "100 kWh",
+                "charging_pattern": {
+                    "total_energy_consumed": "120 kW",
+                    "average_SOC": "78%",
+                    "connector_type": "Type-1",
+                    "total_charging_sessions": 27,
+                    "average_charging_rate": "0.70 kW"
+                },
+                "usage": {
+                    "avg_daily_km_driven": "78 km",
+                    "temperature_low_high": "28°C / 34°C",
+                    "SOC_range": "30% - 95%",
+                    "range_observed_min_max": "87 km / 110 km",
+                    "real_range_observed": "90 km",
+                    "observed_vs_EPA_WLTP_provided": "90 km / 135 km"
+                },
+                "battery_health": {
+                    "SoH": "100%",
+                    "estimated_degradation": "0.00%",
+                    "battery_chemistry": "Li-ion",
+                    "end_of_life": "March, 2029",
+                    "remaining_useful_life": 1397
+                }
+            }
+        },
+        {
+            "location": "Delhi",
+            "date_of_connection": "May 15, 2024",
+            "data_points_collected": 1567,
+            "vehicle_information": {
+                "odometer": 98765,
+                "vehicle_model": "Tesla Model S",
+                "model_year": 2022,
+                "VIN": "987654321",
+                "battery_capacity": "85 kWh",
+                "charging_pattern": {
+                    "total_energy_consumed": "150 kW",
+                    "average_SOC": "82%",
+                    "connector_type": "Type-2",
+                    "total_charging_sessions": 30,
+                    "average_charging_rate": "0.75 kW"
+                },
+                "usage": {
+                    "avg_daily_km_driven": "95 km",
+                    "temperature_low_high": "25°C / 32°C",
+                    "SOC_range": "20% - 90%",
+                    "range_observed_min_max": "80 km / 100 km",
+                    "real_range_observed": "85 km",
+                    "observed_vs_EPA_WLTP_provided": "85 km / 120 km"
+                },
+                "battery_health": {
+                    "SoH": "95%",
+                    "estimated_degradation": "5.00%",
+                    "battery_chemistry": "Li-ion",
+                    "end_of_life": "April, 2028",
+                    "remaining_useful_life": 1100
+                }
+            }
+        },
+        {
+            "location": "Mumbai",
+            "date_of_connection": "June 10, 2024",
+            "data_points_collected": 1324,
+            "vehicle_information": {
+                "odometer": 54321,
+                "vehicle_model": "Nissan Leaf",
+                "model_year": 2020,
+                "VIN": "543216789",
+                "battery_capacity": "40 kWh",
+                "charging_pattern": {
+                    "total_energy_consumed": "90 kW",
+                    "average_SOC": "75%",
+                    "connector_type": "CHAdeMO",
+                    "total_charging_sessions": 25,
+                    "average_charging_rate": "0.60 kW"
+                },
+                "usage": {
+                    "avg_daily_km_driven": "60 km",
+                    "temperature_low_high": "22°C / 28°C",
+                    "SOC_range": "25% - 80%",
+                    "range_observed_min_max": "70 km / 95 km",
+                    "real_range_observed": "75 km",
+                    "observed_vs_EPA_WLTP_provided": "75 km / 110 km"
+                },
+                "battery_health": {
+                    "SoH": "98%",
+                    "estimated_degradation": "2.00%",
+                    "battery_chemistry": "Li-ion",
+                    "end_of_life": "May, 2027",
+                    "remaining_useful_life": 800
+                }
+            }
+        },
+        {
+            "location": "Bangalore",
+            "date_of_connection": "July 5, 2024",
+            "data_points_collected": 1789,
+            "vehicle_information": {
+                "odometer": 23456,
+                "vehicle_model": "Hyundai Kona Electric",
+                "model_year": 2023,
+                "VIN": "234567890",
+                "battery_capacity": "64 kWh",
+                "charging_pattern": {
+                    "total_energy_consumed": "110 kW",
+                    "average_SOC": "80%",
+                    "connector_type": "CCS",
+                    "total_charging_sessions": 22,
+                    "average_charging_rate": "0.80 kW"
+                },
+                "usage": {
+                    "avg_daily_km_driven": "85 km",
+                    "temperature_low_high": "20°C / 30°C",
+                    "SOC_range": "35% - 90%",
+                    "range_observed_min_max": "90 km / 110 km",
+                    "real_range_observed": "95 km",
+                    "observed_vs_EPA_WLTP_provided": "95 km / 150 km"
+                },
+                "battery_health": {
+                    "SoH": "97%",
+                    "estimated_degradation": "3.00%",
+                    "battery_chemistry": "Li-ion",
+                    "end_of_life": "June, 2026",
+                    "remaining_useful_life": 600
+                }
+            }
+        },
+        {
+            "location": "Chennai",
+            "date_of_connection": "August 20, 2024",
+            "data_points_collected": 1654,
+            "vehicle_information": {
+                "odometer": 87654,
+                "vehicle_model": "Chevrolet Bolt EV",
+                "model_year": 2019,
+                "VIN": "876543219",
+                "battery_capacity": "60 kWh",
+                "charging_pattern": {
+                    "total_energy_consumed": "100 kW",
+                    "average_SOC": "70%",
+                    "connector_type": "Type-2",
+                    "total_charging_sessions": 20,
+                    "average_charging_rate": "0.65 kW"
+                },
+                "usage": {
+                    "avg_daily_km_driven": "70 km",
+                    "temperature_low_high": "27°C / 35°C",
+                    "SOC_range": "40% - 85%",
+                    "range_observed_min_max": "80 km / 100 km",
+                    "real_range_observed": "85 km",
+                    "observed_vs_EPA_WLTP_provided": "85 km / 130 km"
+                },
+                "battery_health": {
+                    "SoH": "93%",
+                    "estimated_degradation": "7.00%",
+                    "battery_chemistry": "Li-ion",
+                    "end_of_life": "December, 2025",
+                    "remaining_useful_life": 400
+                }
+            }
+        }
+    ]
+}

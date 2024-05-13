@@ -30,7 +30,6 @@ model Account {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-
   @@index([userId])
 }
 
@@ -68,6 +67,7 @@ model User {
   accounts    Account[]
   sessions    Session[]
   invitations Invitation[]
+  vehicles    Vehicle[]
 }
 
 model Team {
@@ -183,6 +183,29 @@ model Price {
   created       DateTime
 
   service Service @relation(fields: [serviceId], references: [id], onDelete: Cascade)
+}
+
+model EnodeToken {
+  id        String   @id @default(uuid())
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+model Vehicle {
+  id               String   @id @default(uuid())
+  make             String
+  model            String
+  year             Int
+  vin              String? // Optional field if `vehicle.information.vin` can be null
+  odometer         Float? // Optional field if `vehicle.odometer.distance` can be null
+  batteryCapacity  Float? // Optional field if `vehicle.chargeState.batteryCapacity` can be null
+  ownerId          String
+  owner            User     @relation(fields: [ownerId], references: [id])
+  dateOfConnection DateTime // Store date of connection
+  soc              Float? // Assuming battery level is always present
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @default(now())
 }
 
 model jackson_store {
