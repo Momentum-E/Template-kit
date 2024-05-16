@@ -4,16 +4,8 @@ import SocChart from './charts/SocChart';
 import useVehicleStore from 'store/store';
 import { useEffect } from 'react';
 
-const VehicleChargePattern = () => {
+const VehicleChargePattern = ({soc}) => {
   const { t } = useTranslation('common');
-
-  // const selectedVehicleId = useVehicleStore((state) => state.selectedVehicleId);
-  // const vehiclesFromStore = useVehicleStore((state) => state.vehicles);
-
-  // useEffect(() => {
-    
-  // }, [selectedVehicleId])
-  
 
   return (
     <Card>
@@ -41,7 +33,7 @@ const VehicleChargePattern = () => {
             </div>
           </div>
           <div className="border">
-            <SocChart soc={100}/>
+            <SocChart soc={soc}/>
           </div>
           <div className="flex flex-col justify-evenly">
             <div>

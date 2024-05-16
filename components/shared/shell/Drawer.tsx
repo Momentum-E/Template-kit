@@ -40,8 +40,8 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
                 <Brand />
                 <TeamDropdown />
                 <Navigation />
-                <AddCharger />
-                <VehicleList />
+                {/* <AddCharger /> */}
+                {/* <VehicleList /> */}
                 <AddVehicle />
               </div>
             </div>
@@ -54,8 +54,8 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
           <Brand />
           <TeamDropdown />
           <Navigation />
-          <AddCharger />
-          <VehicleList />
+          {/* <AddCharger /> */}
+          {/* <VehicleList /> */}
           <AddVehicle />
         </div>
       </div>
