@@ -8,6 +8,7 @@ const VehicleList = () => {
   const setSelectedVehicleId = useVehicleStore(
     (state) => state.setSelectedVehicleId
   );
+  
   const selectedVehicleId = useVehicleStore((state) => state.selectedVehicleId);
 
   const handleClick = (
@@ -20,13 +21,13 @@ const VehicleList = () => {
   };
 
   return vehicles.length != 0 ? (
-    <div className="flex flex-1 flex-col">
+    <div className="flex w-full flex-col">
       {/* <h1>Vehicles</h1> */}
-      <h1 className="p-2 font-semibold">Fleet</h1>
+      {/* <h1 className="p-2 font-semibold">Fleet</h1> */}
       <div className="flex flex-wrap flex-col w-full">
         {vehicles.map((vehicle) => (
           <div
-            className={`group p-4 flex items-center justify-between rounded text-sm text-gray-900 ${
+            className={`group p-4 flex items-center justify-between rounded text-sm text-gray-900 cursor-pointer ${
               selectedVehicleId === vehicle.id
                 ? 'text-white bg-gray-800 hover:bg-gray-100 hover:text-gray-900' // Apply black background if selected
                 : 'hover:bg-gray-100 hover:text-gray-900 dark:text-gray-100 dark:hover:text-gray-100 dark:hover:bg-gray-800'

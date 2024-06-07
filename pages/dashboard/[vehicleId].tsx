@@ -22,13 +22,13 @@ const VehicleDashboard = () => {
   const selectedVehicleId = useVehicleStore((state) => state.selectedVehicleId);
   const vehiclesFromStore = useVehicleStore((state) => state.vehicles);
   // console.log("vehicleID",vehicleId);
-  console.log("selectedVehicleId", selectedVehicleId);
+  // console.log('selectedVehicleId', selectedVehicleId);
 
   // Find the selected vehicle based on selectedVehicleId
   const selectedVehicle = vehiclesFromStore.find(
     (vehicle) => vehicle.id === selectedVehicleId
   );
-  console.log('selectedVehicle', selectedVehicle);
+  // console.log('selectedVehicle', selectedVehicle);
 
   return (
     <div className="flex gap-6 w-full justify-center items-center">

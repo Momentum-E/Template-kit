@@ -7,6 +7,7 @@ import AddVehicle from './AddVehicle';
 import { useTranslation } from 'next-i18next';
 import VehicleList from './VehicleList';
 import AddCharger from './AddCharger';
+import ActionCentre from './ActionCentre';
 
 interface DrawerProps {
   sidebarOpen: boolean;
@@ -39,7 +40,9 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white dark:bg-black px-6 pb-4">
                 <Brand />
                 <TeamDropdown />
+                <ActionCentre />
                 <Navigation />
+                {/* <ActionCentre /> */}
                 {/* <AddCharger /> */}
                 {/* <VehicleList /> */}
                 <AddVehicle />
@@ -53,7 +56,9 @@ const Drawer = ({ sidebarOpen, setSidebarOpen }: DrawerProps) => {
         <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 px-6">
           <Brand />
           <TeamDropdown />
+          <ActionCentre />
           <Navigation />
+          
           {/* <AddCharger /> */}
           {/* <VehicleList /> */}
           <AddVehicle />

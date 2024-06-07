@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
-const AvgDistanceChart = () => {
+const DistanceTravelledChart = () => {
   const [options] = useState({
     xaxis: {
       categories: [
@@ -35,6 +35,18 @@ const AvgDistanceChart = () => {
       name: 'Vehicle 1',
       data: [30, 40, 45, 50, 49, 60, 70, 91, 88, 99, 87, 77],
     },
+    {
+      name: 'Vehicle 2',
+      data: [60, 70, 91, 88, 99, 87, 77, 30, 40, 45, 50, 49],
+    },
+    {
+      name: 'Vehicle 3',
+      data: [35, 67, 34, 56, 45, 56, 78, 89, 65, 76, 54, 66],
+    },
+    // {
+    //   name: 'Vehicle 4',
+    //   data: [30, 40, 45, 50, 49, 60, 70, 91, 88, 99, 87, 77],
+    // },
   ]);
 
   return (
@@ -54,4 +66,4 @@ const AvgDistanceChart = () => {
   );
 };
 
-export default AvgDistanceChart;
+export default DistanceTravelledChart;

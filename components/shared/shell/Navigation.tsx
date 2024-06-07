@@ -26,6 +26,7 @@ const Navigation = () => {
 
   return (
     <nav className="flex flex-1 flex-col">
+      <hr className='border-1 mb-2'></hr>
       <Navigation />
     </nav>
   );

@@ -19,12 +19,16 @@ export default async function handleWebhook(
     // Read headers from the request
     const signature = req.headers['x-enode-signature'] as string | undefined;
 
+    console.log("signature", signature);
+    console.log("req.body", req.body);
+    console.log("webhook secret", WEBHOOK_SECRET);
     // Verify signature
     const isValidSignature = verifySignature(
       req.body,
       signature,
       WEBHOOK_SECRET
     );
+
     if (!isValidSignature) {
       console.error('Invalid signature');
       res.status(401).json({ error: 'Invalid signature' });
@@ -66,7 +70,8 @@ function verifySignature(
 // Function to handle each event
 async function handleEvent(event: any) {
   try {
-    console.log('event:', event.event);
+    console.log("event:", event);
+    console.log('event type:', event.event);
 
     // // Check if the event contains vehicle information
     if (event.event === 'user:vehicle:discovered') {

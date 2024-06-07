@@ -1,5 +1,4 @@
 import {
-  HomeIcon,
   RectangleStackIcon,
   ShieldCheckIcon,
   UserCircleIcon,
@@ -12,12 +11,6 @@ const UserNavigation = ({ activePathname }: NavigationProps) => {
   const { t } = useTranslation('common');
 
   const menus: MenuItem[] = [
-    {
-      name: t('dashboard'),
-      href: '/dashboard',
-      icon:  HomeIcon,
-      active: activePathname === '/dashboard',
-    },
     {
       name: t('all-teams'),
       href: '/teams',

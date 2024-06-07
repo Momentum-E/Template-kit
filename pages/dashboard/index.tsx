@@ -8,7 +8,15 @@ import { prisma } from '@/lib/prisma';
 import useTeams from 'hooks/useTeams';
 import { getSession, useSession } from 'next-auth/react';
 import useVehicleStore from 'store/store';
-import VehicleList from '@/components/shared/shell/VehicleList';
+import AllVehicle from '@/components/dashboard/aggregatedDashboard/AllVehicle';
+import VehicleStatus from '@/components/dashboard/aggregatedDashboard/VehicleStatus';
+import { LinkIcon } from '@heroicons/react/24/outline';
+import InfoCard from '@/components/dashboard/InfoCard';
+import VehicleBatteryHealth from '@/components/dashboard/VehicleBatteryHealth';
+import VehicleUsage from '@/components/dashboard/VehicleUsage';
+import BatteryHealth from '@/components/dashboard/aggregatedDashboard/BatteryHealth';
+import DistanceTravelled from '@/components/dashboard/aggregatedDashboard/DistanceTravelled';
+import Condition from '@/components/dashboard/aggregatedDashboard/Condition';
 
 interface Vehicle {
   id: string;
@@ -29,6 +37,9 @@ const Dashboard: NextPageWithLayout<{ vehicles: Vehicle[] }> = ({
   const router = useRouter();
   const { isLoading, teams } = useTeams(); // Assuming useTeams fetches team data
   const setVehicles = useVehicleStore((state) => state.setVehicles);
+  const setSelectedVehicleId = useVehicleStore(
+    (state) => state.setSelectedVehicleId
+  );
   const selectedVehicleId = useVehicleStore((state) => state.selectedVehicleId);
   const vehiclesFromStore = useVehicleStore((state) => state.vehicles);
 
@@ -47,13 +58,68 @@ const Dashboard: NextPageWithLayout<{ vehicles: Vehicle[] }> = ({
 
   useEffect(() => {
     setVehicles(vehicles); // Update the state of vehicles using Zustand
+    setSelectedVehicleId('');
   }, [vehicles, setVehicles]);
 
   if (isLoading) {
     return <Loading />;
   }
 
-  return <VehicleList/>;
+  return (
+    <div className="flex gap-6 w-full justify-center items-center">
+      {vehiclesFromStore ? (
+        <div className="flex gap-6 flex-col w-full">
+          <div className="flex gap-6">
+            <InfoCard
+              titleKey="hello"
+              descriptionKey="description"
+              icon={LinkIcon}
+            />
+            <InfoCard
+              titleKey="hello"
+              descriptionKey="description"
+              icon={LinkIcon}
+            />
+            <InfoCard
+              titleKey="hello"
+              descriptionKey="description"
+              icon={LinkIcon}
+            />
+            <InfoCard
+              titleKey="hello"
+              descriptionKey="description"
+              icon={LinkIcon}
+            />
+          </div>
+          <div className="flex gap-6 w-full">
+            <AllVehicle />
+            <VehicleStatus />
+            <Condition />
+          </div>
+          <div className="flex gap-6">
+            <DistanceTravelled />
+            <BatteryHealth />
+          </div>
+          <div className="flex gap-6">
+            <InfoCard
+              titleKey="hello"
+              descriptionKey="description"
+              icon={LinkIcon}
+            />
+            <InfoCard
+              titleKey="hello"
+              descriptionKey="description"
+              icon={LinkIcon}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="flex justify-center items-center w-full h-full">
+          Please select a vehicle
+        </div>
+      )}
+    </div>
+  );
 };
 
 export async function getServerSideProps({
